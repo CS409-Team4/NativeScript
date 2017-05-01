@@ -1,0 +1,22 @@
+<Page loaded="pageLoaded">
+    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+        <android>
+            <NavigationButton icon="res://ic_back" tap="goBack" />
+        </android>
+    </ActionBar>
+    <StackLayout id="container">
+        <SegmentedBar row="0"
+                      selectedIndex="{{ selectedDay }}"
+                      selectedBackgroundColor="#FAC950">
+            <SegmentedBar.items>
+                <SegmentedBarItem title="MAY 3" />
+                <SegmentedBarItem title="MAY 4" />
+                <SegmentedBarItem title="MAY 5" />
+            </SegmentedBar.items>
+        </SegmentedBar>
+        <StackLayout id="searchcontainer">
+        <SearchBar row="0" text="{{ search }}" hint="Search" id="search" tap="inputTap"/>
+        </StackLayout>
+
+    </StackLayout>
+</Page>

@@ -1,0 +1,37 @@
+<Page loaded="pageLoaded">
+    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+        <android>
+            <NavigationButton icon="res://ic_menu" tap="sideDrawer" />
+        </android>
+    </ActionBar>
+  	<StackLayout class="main" >
+  		<ScrollView>
+  			<GridLayout columns="*,*" rows="230, 230, 230">
+                <StackLayout class="cardview" row="0" col="0" tap="clickcard">
+	               <Image src="~/images/screen_layouts.png" />
+	               <Label text="Layouts"/>
+                </StackLayout>
+                <StackLayout class="cardview" row="0" col="1" tap="clickcard" >
+	               <Image src="~/images/screen_user_profile.png" />
+	               <Label text="User profile"/>
+                </StackLayout>
+                <StackLayout class="cardview" row="1" col="0" tap="clickcard" >
+	               <Image src="~/images/screen_conference_agenda.png" />
+	               <Label text="Conference agenda"/>
+                </StackLayout>
+                <StackLayout class="cardview" row="1" col="1" tap="clickcard" >
+	               <Image src="~/images/screen_listview_layouts.png" />
+	               <Label text="Item layouts"/>
+                </StackLayout>
+                <StackLayout class="cardview" row="2" col="0" tap="clickcard">
+	               <Image src="~/images/screen_reorder.png" />
+	               <Label text="Item reorder"/>
+                </StackLayout>
+                <StackLayout class="cardview" row="2" col="1" tap="clickcard">
+	               <Image src="~/images/screen_listview_selection.png" />
+	               <Label text="Selection"/>
+                </StackLayout>  
+  			</GridLayout>
+  		</ScrollView>
+    </StackLayout>
+</Page>

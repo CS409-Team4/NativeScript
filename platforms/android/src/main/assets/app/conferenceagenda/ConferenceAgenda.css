@@ -1,0 +1,18 @@
+#container {
+    background-color:gray;
+}
+
+#searchcontainer{
+    background-color:lightgray;
+}
+
+SegmentedBar {
+    background-color: lightgreen;
+    color: white;
+    borderBottomColor: #fed03c;
+
+}
+SearchBar {
+    background-color: white;
+    margin: 16;
+}

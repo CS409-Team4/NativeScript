@@ -1,0 +1,30 @@
+Button {
+    margin :-3;
+}
+
+.st {
+    height: 80;
+}
+.tabtitle {
+    margin: 10;
+}
+
+.container {
+    padding: 5;
+}
+
+.btn1 {
+    background-color: #fe8256;
+}
+.btn2 {
+    background-color: #899bfe;
+}
+.btn3 {
+    background-color: #455b66;
+}
+.btn4 {
+    background-color: #fed03c;
+}
+.btn5 {
+    background-color: #3c5bfe;
+}

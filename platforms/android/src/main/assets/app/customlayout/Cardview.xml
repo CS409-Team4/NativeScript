@@ -1,0 +1,4 @@
+<StackLayout orientation="vertical" >
+	<Image id="img"/>
+	<Label id="txt" style="text-align:center; margin-top:15px;"/>
+</StackLayout>

@@ -1,0 +1,37 @@
+#page{
+    background-color: gray;
+}
+
+#user-image {
+    border-radius: 50;
+    width: 70dp;
+    height: 70dp;
+    margin-top: 20dp;
+    horizontal-align: center;
+    vertical-align: top;
+    align-self: center;
+}
+
+#user-main {
+    background-color: white;
+    horizontal-align: center;
+    width : 80%;
+    height: 80%;
+    margin-top: -30;
+    margin-bottom: 30;
+    z-index: -1;
+}
+#info-section {
+    padding : 30 10 10 10;
+}
+#switch {
+    horizontal-align: right;
+}
+#button {
+    horizontal-align: stretch;
+    text-align: center;
+    color: white;
+    background-color: #30BCFF;
+    font-size: 16;
+    text-transform: uppercase;
+}

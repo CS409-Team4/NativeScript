@@ -1,0 +1,80 @@
+<Page loaded="pageLoaded">
+    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+    <android>
+        <NavigationButton icon="res://ic_back" tap="goBack" />
+    </android>
+    </ActionBar>
+    <TabView id="tabview"
+            tabsBackgroundColor="lightgreen"
+             selectedIndexChanged="selectedIndexChanged"
+             selectedIndex="{{ selectedIndex}}">
+        <TabView.items >
+            <TabViewItem iconSource="res://stack">
+                <TabViewItem.view>
+                    <StackLayout class="container" orientation="vertical">
+                        <Label class="tabtitle" text="Stack"/>
+                        <Button class="btn1 st"/>
+                        <Button class="btn2 st"/>
+                        <Button class="btn3 st"/>
+                        <Button class="btn4 st"/>
+                        <Button class="btn5 st"/>
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem iconSource="res://grid">
+                <TabViewItem.view>
+                    <StackLayout>
+                    <Label class="tabtitle" text="Grid"/>
+                    <GridLayout class="container" columns="*,*" rows="*,*,*,*,*">
+                        <Button class="btn1" rowSpan="2"/>
+                        <Button class="btn2" col="1" rowSpan="4"/>
+                        <Button class="btn3" col="0" row="2"/>
+                        <Button class="btn4" col="0" row="3"/>
+                        <Button class="btn5" col="0" row="4" colSpan="2"/>
+                    </GridLayout>
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem iconSource="res://wrap">
+                <TabViewItem.view>
+                    <StackLayout class="container">
+                        <Label class="tabtitle" text="Wrap" />
+                        <WrapLayout horizontal-alignment="center">
+                            <Button class="btn1" width="150" height="100"/>
+                            <Button class="btn2" width="150" height="100"/>
+                            <Button class="btn3" width="200" height="100"/>
+                            <Button class="btn4" width="100" height="100"/>
+                            <Button class="btn5" width="150" height="100"/>
+                        </WrapLayout>
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem iconSource="res://dock">
+                <TabViewItem.view>
+                    <StackLayout class="container">
+                        <Label class="tabtitle" text="Dock" />
+                        <DockLayout row="1" stretchLastChild="true" height="500">
+                            <Button class="btn1" dock="left"/>
+                            <Button class="btn2" height="80" dock="top"/>
+                            <Button class="btn3" dock="right"/>
+                            <Button class="btn4" height="80" dock="bottom"/>
+                            <Button class="btn5" />
+                        </DockLayout>
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem iconSource="res://absolute">
+                <TabViewItem.view>
+                    <StackLayout>
+                        <Label class="tabtitle" text="Absolute" />
+                        <AbsoluteLayout >
+                            <Button class="btn1" left="50" top="50" width="100" height="100"/>
+                            <Button class="btn2" left="200" top="100" width="100" height="300"/>
+                            <Button class="btn3" left="50" top="280" width="200" height="100"/>
+                        </AbsoluteLayout>
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
+</Page>

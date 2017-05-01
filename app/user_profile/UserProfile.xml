@@ -1,0 +1,32 @@
+<Page loaded="pageLoaded"
+      xmlns:CheckBox="nativescript-checkbox">
+    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+    <android>
+        <NavigationButton icon="res://ic_back" tap="goBack" />
+    </android>
+    </ActionBar>
+    <ScrollView id="scrollview">
+        <StackLayout id="page">
+            <Image id="user-image" src="~/images/user.png" tap="imgclick"/>
+            <StackLayout id="user-main">
+                <StackLayout id="info-section">
+                <Label text="Username"/>
+                <TextView text="ILoveNS"/>
+                <Label text="Email"/>
+                <TextView text="cs409@kaist.ac.kr"/>
+                <Label text="Password"/>
+                <TextField id="password" text="Password" secure="true" />
+                <CheckBox:CheckBox checked="false" text="Show password" id="checkbox" tap="checkboxclick"/>
+
+                <Label text="Bio"/>
+                <TextView hint="Add bio"/>
+                <StackLayout orientation="horizontal">
+                    <Label text="Public profile"></Label>
+                    <Switch id="switch" checked="false"/>
+                </StackLayout>
+                </StackLayout>
+                <Button text="Update" id="button" tap="btnclick"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
