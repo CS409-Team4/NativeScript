@@ -1,0 +1,26 @@
+<Page loaded="pageLoaded"
+      xmlns:lv="nativescript-telerik-ui/listview">
+    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+        <android>
+            <NavigationButton icon="res://ic_back" tap="goBack" />
+        </android>
+        <ActionBar.actionItems>
+            <ActionItem tap="onChangeLayoutTap" id="layoutchange" icon="res://ic_listview_layouts_wrap"/>
+        </ActionBar.actionItems>
+    </ActionBar>
+
+    <lv:RadListView items="{{ dataItems }}" id="radlistview">
+        <lv:RadListView.listViewLayout>
+            <lv:ListViewLinearLayout itemHeight="210"/>
+        </lv:RadListView.listViewLayout>
+        <lv:RadListView.itemTemplate>
+                <StackLayout orientation="vertical">
+                    <Image src="{{ imgName }}"  height="200" stretch="aspectFill" />
+                    <Label text="{{ title }}" cssClass="recipeTitle"/>
+                    <Label text="{{ 'by ' + author }}" cssClass="recipeAuthor"/>
+                </StackLayout>
+        </lv:RadListView.itemTemplate>
+    </lv:RadListView>
+
+
+</Page>

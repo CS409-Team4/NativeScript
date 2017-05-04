@@ -3,7 +3,7 @@ var frameModule = require("ui/frame");
 
 
 exports.pageLoaded = function() {
-    console.log("Hello World3!");
+    console.log("Welcome Subin!!");
 };
 
 
@@ -20,10 +20,11 @@ function clickcard(eventData) {
     }
     else if(str == ":18:"){
         console.log("conference agenda");
-        topmost.navigate("conferenceagenda/ConferenceAgenda");
+        topmost.navigate("conference/ConferenceAgenda");
     }
     else if(str == ":22:"){
         console.log("Item layouts");
+        topmost.navigate("itemlayout/ItemLayout");
     }
     else if(str == ":26:"){
         console.log("hello");

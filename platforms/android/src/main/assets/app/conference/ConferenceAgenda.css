@@ -1,0 +1,43 @@
+#container {
+    background-color:gray;
+}
+
+#searchcontainer{
+    background-color:lightgray;
+}
+
+SegmentedBar {
+    background-color: lightgreen;
+    color: white;
+    borderBottomColor: #fed03c;
+
+}
+SearchBar {
+    background-color: white;
+    margin: 16;
+}
+
+.session-time {
+    font-family: "sans-serif";
+    /*font-weight: 700;*/
+    font-size: 12;
+    color: #4ac1fa;
+    margin-top: 16;
+}
+
+.session-room {
+    font-family: "sans-serif";
+    /*font-weight: 700;*/
+    font-size: 12;
+    color: white;
+    text-transform: uppercase;
+    margin: 16 0 0 4;
+}
+
+.session-title {
+    font-family: "sans-serif";
+    /*font-weight: 300;*/
+    font-size: 20;
+    color: #c3c3c3;
+    margin-bottom: 16;
+}
