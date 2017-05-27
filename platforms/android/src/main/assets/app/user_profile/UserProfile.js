@@ -3,7 +3,7 @@ var frameModule = require("ui/frame");
 var application = require("application");
 var topmost= frameModule.topmost();
 exports.checkboxclick = function() {
-    var CheckBox = require('nativescript-checkbox');
+    var topmost= frameModule.topmost();
     var checkBox = topmost.getViewById('checkbox');
     var password = topmost.getViewById("password");
     if(checkBox.checked == true){

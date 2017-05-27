@@ -1,3 +1,34 @@
-@import "nativescript-theme-core/css/core.light.css";
+﻿
+.btn {
+    font-size: 18;
+}
 
-/* Your CSS goes here */
+.main{
+    padding : 5px;
+	background-color: gray;
+}
+
+.cardview {
+    background-color: white;
+    margin : 5px;
+}
+
+.cardview Label {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.drawer-content {
+	background-color: #00c73c;
+}
+
+.drawer-list {
+	font-size: 18;
+	color : white;
+	padding : 50dp;
+}
+.drawer-list Label {
+	padding : 10dp;
+}
+
+@import 'nativescript-theme-core/css/core.light.css';

@@ -1,15 +1,12 @@
-repositories {
-  jcenter()
+android {
+	productFlavors {
+		"nativescript-telerik-ui" {
+			dimension "nativescript-telerik-ui"
+		}
+	}
 }
 
 dependencies {
-  compile 'com.yalantis:ucrop:1.5.0'
-}
-
-android {
-    productFlavors {
-        "nic" {
-            dimension "nic"
-        }
-    }
+	compile "com.android.support:appcompat-v7:23.1.0"
+	compile "com.android.support:recyclerview-v7:23.1.0"
 }

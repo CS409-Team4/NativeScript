@@ -89,7 +89,6 @@ exports.onChangeLayoutTap = function(args){
     }else{
         actionbtn.icon ="res://ic_listview_layouts_wrap";
         radlist.listViewLayout = LINEAR_LAYOUT;
-
     }
 
 

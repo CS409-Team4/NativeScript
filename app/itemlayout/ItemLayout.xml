@@ -21,6 +21,4 @@
                 </StackLayout>
         </lv:RadListView.itemTemplate>
     </lv:RadListView>
-
-
 </Page>

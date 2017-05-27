@@ -1,4 +1,4 @@
-<Page loaded="pageLoaded">
+<Page loaded="pageLoaded" >
     <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
         <android>
             <NavigationButton icon="res://ic_back" tap="goBack" />
@@ -7,7 +7,8 @@
     <StackLayout id="container">
         <SegmentedBar row="0" selectedIndex="{{ selectedDay }}"
                       selectedBackgroundColor="#FAC950"
-                      cssClass="conf-segmented-bar">
+                      class="conf-segmented-bar"
+                      selectedIndexChanged="selectedIndexChanged">
             <SegmentedBar.items>
                 <SegmentedBarItem title="MAY 3" />
                 <SegmentedBarItem title="MAY 4" />
@@ -15,16 +16,20 @@
             </SegmentedBar.items>
         </SegmentedBar>
         <StackLayout id="searchcontainer">
-            <SearchBar row="0" text="{{ search }}" hint="Search" id="search" tap="inputTap" loaded="doNotShowAndroidKeyboard"/>
+            <SearchBar row="0" 
+				hint="Search" 
+				id="search" text="{{ search }}" tap="inputTap" 
+                loaded="doNotShowAndroidKeyboard"/>
         </StackLayout>
+
         <GridLayout row="1" rows="auto, *">
             <ListView row="1" items="{{ sessions }}" id="sessions-list" separatorColor="#00000000">
                 <ListView.itemTemplate>
                     <GridLayout columns="auto, auto, *" rows="auto, auto" tap="toggleFavourite" backgroundColor="{{ isFavourite ? '#19FFFFFF' : '#00000000' }}">
-                        <Image row="0" rowSpan="2" col="0" src="{{ isFavourite ? 'res://add_to_fav_1' : 'res://add_to_fav' }}" />
-                        <Label row="0" col="1" text="{{ start + ' ~ '+  end }}" cssClass="session-time"/>
-                        <Label row="0" col="2" text="{{ room }}" cssClass="session-room"/>
-                        <Label row="1" col="1" colSpan="2" text="{{ title }}" textWrap="true" cssClass="session-title"/>
+                        <Image id="imgID" row="0" rowSpan="2" col="0" src="{{ isFavourite ? 'res://add_to_fav_1' : 'res://add_to_fav' }}" />
+                        <Label row="0" col="1" text="{{ start + ' ~ '+  end }}" class="session-time"/>
+                        <Label row="0" col="2" text="{{ room }}" class="session-room"/>
+                        <Label row="1" col="1" colSpan="2" text="{{ title }}" textWrap="true" class="session-title"/>
                     </GridLayout>
                 </ListView.itemTemplate>
             </ListView>

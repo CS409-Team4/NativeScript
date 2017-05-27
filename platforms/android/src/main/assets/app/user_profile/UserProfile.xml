@@ -1,5 +1,5 @@
 <Page loaded="pageLoaded"
-      xmlns:CheckBox="nativescript-checkbox">
+    xmlns:CheckBox="nativescript-checkbox">
     <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
     <android>
         <NavigationButton icon="res://ic_back" tap="goBack" />
@@ -17,13 +17,12 @@
                 <Label text="Password"/>
                 <TextField id="password" text="Password" secure="true" />
                 <CheckBox:CheckBox checked="false" text="Show password" id="checkbox" tap="checkboxclick"/>
-
                 <Label text="Bio"/>
                 <TextView hint="Add bio"/>
-                <StackLayout orientation="horizontal">
+                <GridLayout rows="auto, *">
                     <Label text="Public profile"></Label>
-                    <Switch id="switch" checked="false"/>
-                </StackLayout>
+                    <Switch id="switch" horizontalAlignment="right" checked="false" />
+                </GridLayout>
                 </StackLayout>
                 <Button text="Update" id="button" tap="btnclick"/>
             </StackLayout>

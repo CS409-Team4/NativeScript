@@ -1,37 +1,51 @@
-<Page loaded="pageLoaded">
-    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
-        <android>
-            <NavigationButton icon="res://ic_menu" tap="sideDrawer" />
-        </android>
-    </ActionBar>
-  	<StackLayout class="main" >
-  		<ScrollView>
-  			<GridLayout columns="*,*" rows="230, 230, 230">
-                <StackLayout class="cardview" row="0" col="0" tap="clickcard">
-	               <Image src="~/images/screen_layouts.png" />
-	               <Label text="Layouts"/>
-                </StackLayout>
-                <StackLayout class="cardview" row="0" col="1" tap="clickcard" >
-	               <Image src="~/images/screen_user_profile.png" />
-	               <Label text="User profile"/>
-                </StackLayout>
-                <StackLayout class="cardview" row="1" col="0" tap="clickcard" >
-	               <Image src="~/images/screen_conference_agenda.png" />
-	               <Label text="Conference agenda"/>
-                </StackLayout>
-                <StackLayout class="cardview" row="1" col="1" tap="clickcard" >
-	               <Image src="~/images/screen_listview_layouts.png" />
-	               <Label text="Item layouts"/>
-                </StackLayout>
-                <StackLayout class="cardview" row="2" col="0" tap="clickcard">
-	               <Image src="~/images/screen_reorder.png" />
-	               <Label text="Item reorder"/>
-                </StackLayout>
-                <StackLayout class="cardview" row="2" col="1" tap="clickcard">
-	               <Image src="~/images/screen_listview_selection.png" />
-	               <Label text="Selection"/>
-                </StackLayout>  
-  			</GridLayout>
-  		</ScrollView>
-    </StackLayout>
+<Page loaded="pageLoaded"
+  xmlns:drawer="nativescript-telerik-ui/sidedrawer">
+  <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+    <android>
+        <NavigationButton icon="res://ic_menu_main" tap="openDrawer" />
+    </android>
+</ActionBar>
+<drawer:RadSideDrawer id="drawer" showOverNavigation="true">
+    <drawer:RadSideDrawer.mainContent>
+        <StackLayout class="main" >
+            <ScrollView>
+                <GridLayout columns="*,*" rows="230, 230, 230">
+                    <StackLayout class="cardview" row="0" col="0" tap="clickcard">
+                     <Image src="res://screen_layouts" />
+                     <Label text="Layouts"/>
+                 </StackLayout>
+                 <StackLayout class="cardview" row="0" col="1" tap="clickcard" >
+                     <Image src="res://screen_user_profile" />
+                     <Label text="User profile"/>
+                 </StackLayout>
+                 <StackLayout class="cardview" row="1" col="0" tap="clickcard" >
+                     <Image src="res://screen_conference_agenda" />
+                     <Label text="Conference agenda"/>
+                 </StackLayout>
+                 <StackLayout class="cardview" row="1" col="1" tap="clickcard" >
+                     <Image src="res://screen_listview_layouts" />
+                     <Label text="Item layouts"/>
+                 </StackLayout>
+                 <StackLayout class="cardview" row="2" col="0" tap="clickcard">
+                     <Image src="res://screen_naver" />
+                     <Label text="Web Naver"/>
+                 </StackLayout>
+                 <StackLayout class="cardview" row="2" col="1" tap="clickcard">
+                     <Image src="res://screen_listview_selection" />
+                     <Label text="Selection"/>
+                 </StackLayout>  
+             </GridLayout>
+         </ScrollView>
+     </StackLayout>
+ </drawer:RadSideDrawer.mainContent>
+ <drawer:RadSideDrawerr.drawerContent>
+    <GridLayout class="drawer-content">
+        <StackLayout class="drawer-list">
+          <label text="Home"  />
+          <label text="About" />
+          <label text="Settings" />
+      </StackLayout>
+    </GridLayout>
+</drawer:RadSideDrawerr.drawerContent>
+</drawer:RadSideDrawer>
 </Page>
