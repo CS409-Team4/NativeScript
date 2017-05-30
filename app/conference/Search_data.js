@@ -63,7 +63,7 @@ module.exports = function() {
     observable.sessions = allsessions; 
     observable.items    = _refilter();
     observable.search   = "";
-	observable.selectedDay = -1;
+	observable.selectedDay = 0;
 
     function _refilter() {
         var items = allsessions;

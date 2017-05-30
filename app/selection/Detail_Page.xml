@@ -1,0 +1,20 @@
+<Page navigatingTo="onNavigatingTo">
+	<ActionBar title="Selection" automationText="ActionBar" backgroundColor="#00c73c" color="white">
+		<NavigationButton icon="res://ic_back" tap="goBack" />
+		<android>
+		<ActionBar.actionItems>
+			<ActionItem icon="res://ic_add_to_fav" tap="onToggleFavouriteTap" />
+			<ActionItem icon="res://ic_delete" tap="onDeleteTap" />
+		</ActionBar.actionItems>
+		</android>
+	</ActionBar>
+	<StackLayout>
+		<Label text="hello" /> 
+	</StackLayout>
+	<GridLayout rows="*, auto" id="white-background">
+		<StackLayout row="0" rows="auto, *" orientation="vertical" >
+		<Label text="{{ Title }}" id="detailTitle" textWrap="true" />
+		<Label text="{{ Content }}" id="detailContent" textWrap="true"/>
+		</StackLayout>
+	</GridLayout>
+</Page>

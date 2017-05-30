@@ -1,0 +1,49 @@
+#segmented-bar {
+	background-color : #30BCFF;
+	color: white;
+}
+#contentStyle {
+    font-family: "sans-serif";
+    font-size: 14;
+    color: #677881;
+    margin-top: 4;
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 4;	
+}
+#titleStyle {
+	font-family: "sans-serif";
+    font-size: 18;
+    color: #455b66;
+    margin-left: 10;
+}
+
+#reorder-handle {
+	margin: 8 8 8 16;
+    vertical-align: center;
+}
+
+#itemStyle {
+    background-color: white;
+    padding: 8;
+}
+
+#itemSelectedStyle {
+    background-color: #F3F5FC;
+    padding: 8;
+}
+#title-view-item{
+	font-size: 20;
+	color: white;
+	margin-left: 12;
+	vertical-align: center;
+}
+#action-bar-selection {
+	background-color : #00c73c;
+	color : white;
+}
+
+#action-bar-reorder {
+	background-color : lightgreen;
+	color : white;
+}

@@ -5,15 +5,17 @@ var observable = require("data/observable");
 
 exports.pageLoaded = function() {
     console.log("Welcome Subin!!");
+    var topmost= frameModule.topmost();
+    topmost.navigate("selection/Selection");
 };
 
 
 exports.clickcard = function (eventData) {
-    var topmost= frameModule.topmost();
+/*    var topmost= frameModule.topmost();
     var str = String(eventData.object).match(/:[0-9][0-9]:/g);
     console.log(str);
     if (str == ":13:"){
-        console.log("layouts");
+        console.log("layout2s");
         topmost.navigate("layouts/Layouts");
     }
     else if(str == ":17:"){
@@ -34,7 +36,9 @@ exports.clickcard = function (eventData) {
     }
     else if(str == ":33:"){
         console.log("selection");
-    }    
+        topmost.navigate("selection/Selection");
+    }
+*/
 }
 
 

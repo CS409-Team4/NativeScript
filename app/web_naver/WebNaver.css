@@ -1,0 +1,24 @@
+SearchBar {
+    background-color: white;
+	margin: 16;
+}
+#searchcontainer{
+    background-color:#00c73c;
+}
+
+#GridLayoutTop{
+	background-color:#00c73c;
+	padding: 10 0 5 0;
+}
+
+#menu {
+	width : 20;
+	height : 20;
+}
+
+Label {
+	margin-left : -20;
+	font-size :30;
+	font-weight: bold;
+	color : white;
+}
