@@ -29,10 +29,11 @@ allposts = [
 module.exports = function() {
     var observable = new Observable();
     observable.posts = allposts; 
-	
 	observable.selectedItemsCount = 0;
 	observable.isReorderActive = false;
 	observable.isSelectionActive = false;
+
+	/* go back function */
 	observable.goBack = function(args){
 		var page = args.object.page;
 		var pagebindingContext =page.bindingContext;
@@ -62,6 +63,8 @@ module.exports = function() {
 			topmost.navigate("main-page");
 		}	
 	}
+	
+	/*onActivateReorderTap function*/
 	observable.onActivateReorderTap = function(args){
 		observable.set("isReorderActive", true);
         var page = args.object.page;
@@ -71,12 +74,12 @@ module.exports = function() {
 			if(handle !=undefined){
 				handle.visibility = 'visible';
 			}
-		}
+		}	
+		
 			
 	}
-	observable.onItemReordered = function(args){
-		console.log("hello");
-	}
+
+	/*onItemHold function*/
 	observable.onItemHold = function(args){
 		if(observable.isReorderActive ==false){
 			observable.isSelectionActive = true;
@@ -90,6 +93,8 @@ module.exports = function() {
 			wrapped_layout.class='itemSelectedStyle';
 		}
 	}
+
+	/*onItemTap function*/
 	observable.onItemTap = function(args){
 		if(observable.isReorderActive ==false){
 			var page = args.object.page;
@@ -117,6 +122,8 @@ module.exports = function() {
 			}
 		}
 	}
+
+	/*onToggleSelectedFavoriteTap function*/
 	observable.onToggleSelectedFavoriteTap = function(args){
 		observable.set("isSelectionActive", false);
 		var page = args.object.page;
@@ -141,6 +148,8 @@ module.exports = function() {
 		observable.set("posts", pagebindingContext.posts);
 
 	}
+
+	/*onDeleteSelectedTap function*/
 	observable.onDeleteSelectedTap = function(args){
 		observable.set("isSelectionActive", false);
 		var page = args.object.page;
@@ -158,9 +167,9 @@ module.exports = function() {
 	function _show_list(){
 		var all_favorite = observable.all_favorite;
 		ret = [];
-		for(var i in allposts){
+		for(var i in observable.posts){
 			if(allposts[i].isDeleted == false){
-				if(all_favorite == allposts[i].IsFavourite && all_favorite == 1){
+				if(all_favorite == observable.posts[i].IsFavourite && all_favorite == 1){
 					ret.push(allposts[i]);
 				}
 				if(all_favorite == 0 || all_favorite == undefined) {

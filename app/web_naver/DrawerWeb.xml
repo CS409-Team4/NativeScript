@@ -1,0 +1,9 @@
+<Page loaded="pageLoaded"  actionBarHidden="true">
+	<StackLayout orientation="vertical">
+		<AbsoluteLayout >
+			<WebView id="webview" src="" width="410"/>
+			<Image src="res://float_button" left="10" top="580" style="width: 50; margin:10;" tap="goBackWeb"/>
+		</AbsoluteLayout>
+    </StackLayout>
+</Page>
+

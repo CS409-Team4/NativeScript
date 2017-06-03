@@ -8,3 +8,6 @@ exports.pageLoaded = function(args){
 	var page = args.object;
 	page.bindingContext = new selection_data();
 }
+exports.SegTap = function(){
+	console.log("hello");
+}

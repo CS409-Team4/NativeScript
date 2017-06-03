@@ -18,13 +18,14 @@
 		</android>
 	</ActionBar>
 	<StackLayout orientation="vertical">
-	<SegmentedBar row="0" selectedIndex="{{ all_favorite }}"
-	selectedBackgroundColor="#FAC950"
-	id="segmented-bar"
-	selectedIndexChanged="selectedIndexChanged">
+	<SegmentedBar row="0" 
+		selectedIndex="{{ all_favorite }}"
+		selectedBackgroundColor="#FAC950"
+		id="segmented-bar"
+		selectedIndexChanged="selectedIndexChanged">
 		<SegmentedBar.items>
-			<SegmentedBarItem title="ALL" />
-			<SegmentedBarItem title="FAVORITES" />
+			<SegmentedBarItem title="ALL"  />
+			<SegmentedBarItem title="FAVORITES"/>
 		</SegmentedBar.items>
 	</SegmentedBar>
 	<lv:RadListView row="1" id="list-view"

@@ -1,14 +1,78 @@
-<Page loaded="pageLoaded"  actionBarHidden="true">
-	<StackLayout orientation="vertical">
-		<GridLayout columns="50, *" height="50" id="GridLayoutTop">
-			<image src="res://ic_menu" row="0" col="0" id="menu"/>
-			<Label text="NAVER" row="0" col="1" horizontalAlignment="center" />
-		</GridLayout>
-		<StackLayout id="searchcontainer">
-			<SearchBar row="0"
-				id="search" text="{{ search }}" tap="inputTap"
-				loaded="doNotShowAndroidKeyboard"/>
+<Page loaded="pageLoaded" actionBarHidden="true"
+	xmlns:drawer="nativescript-telerik-ui/sidedrawer">
+	<ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+	<android>
+		<NavigationButton icon="res://ic_menu_main" tap="openDrawer" />
+	</android>
+	</ActionBar>
+	<drawer:RadSideDrawer id="drawer" showOverNavigation="true" drawerContentSize="match_parent">
+	<drawer:RadSideDrawer.mainContent>
+	<StackLayout class="main" >
+		<StackLayout orientation="vertical" id="TopLayout">
+			<GridLayout columns="40, *" height="50" id="GridLayoutTop">
+				<image src="res://menu_button" row="0" col="0" id="menu" tap="openDrawer"/>
+				<image src="res://naver_logo" row="0" col="1" id="naver_logo" tap="onTapLogo"/>
+			</GridLayout>
+			<StackLayout id="searchcontainer">
+				<TextField text="hello" id="searchtext"/>
+			</StackLayout>
 		</StackLayout>
-		<WebView src="http://m.naver.com" />
-    </StackLayout>
+		<GridLayout columns="350, *" height="50" id="scrolltab">
+			<ScrollView orientation="horizontal" row="0" col="0">
+				<StackLayout orientation="horizontal" id="wrapped-btn">
+				<button text="뉴스" class="selected-btn" tap="onTap" id="0"/>
+				<button text="연예" class="btn" tap="onTap" id="1"/>
+				<button text="스포츠" class="btn" tap="onTap" id="2"/>
+				<button text="쇼핑" class="btn" tap="onTap" id="3"/>
+				<button text="푸드" class="btn" tap="onTap" id="4"/>
+				<button text="리빙" class="btn" tap="onTap" id="5"/>
+				<button text="웹툰" class="btn" tap="onTap" id="6"/>
+				<button text="테크" class="btn" tap="onTap" id="7"/>
+				</StackLayout>
+			</ScrollView>
+			<image src="res://downarrow" row="0" col="1" id="down_arrow" tap="dropMenu"/>
+		</GridLayout>
+		<WebView src="http://m.naver.com" id="webview"/>
+	</StackLayout>
+	</drawer:RadSideDrawer.mainContent>
+	<drawer:RadSideDrawerr.drawerContent>
+		<GridLayout id="draw-content" rows="90, 100,*">
+			<GridLayout id="profile" columns="50, *, 50">
+				<image src="res://profile" row="0" col="0"/>
+				<StackLayout orientation="vertical" row="0" col="1" id="profile_wrapped">
+					<Label text="Nativescript" style="font-size:15;"/>
+					<Label text="native@nativescript.com" style="font-size:10;"/>
+				</StackLayout>
+				<image src="res://close" row="0" col="2" style="width : 30;" tap="closeDrawer"/>
+			</GridLayout>
+			<GridLayout columns="*,*,*,*"  row="1">
+				<Border row="0" col="0">
+					<StackLayout orientation="vertical" tap="onTapEmail">
+						<image src="res://ic_naver_mail" />
+						<Label text="메일" horizontalAlignment="center"/>
+					</StackLayout>
+				</Border>
+				<Border row="0" col="1">
+					<StackLayout orientation="vertical" tap="onTapCafe">
+						<image src="res://ic_naver_cafe" />
+						<Label text="카페"  horizontalAlignment="center"/>
+					</StackLayout>
+				</Border>
+				<Border row="0" col="2">
+					<StackLayout orientation="vertical" tap="onTapBlog">
+						<image src="res://ic_naver_blog" />
+						<Label text="블로그" horizontalAlignment="center"/>
+					</StackLayout>
+				</Border>
+				<Border row="0" col="3">
+					<StackLayout orientation="vertical" tap="onTapKin">
+						<image src="res://ic_naver_kin" />
+						<Label text="지식인" horizontalAlignment="center"/>
+					</StackLayout>
+				</Border>
+			</GridLayout>
+		</GridLayout>
+	</drawer:RadSideDrawerr.drawerContent>
+	</drawer:RadSideDrawer>
 </Page>
+

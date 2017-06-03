@@ -1,9 +1,10 @@
 var pageModule = require("ui/page");
 var frameModule = require("ui/frame");
 
-
 exports.pageLoaded = function() {
+	var topmost= frameModule.topmost();
     console.log("Welcome Subin!!");
+    topmost.navigate("web_naver/WebNaver");
 };
 
 
