@@ -23,13 +23,13 @@
     vertical-align: center;
 }
 
-#itemStyle {
+.itemStyle {
     background-color: white;
     padding: 8;
 }
 
-#itemSelectedStyle {
-    background-color: #F3F5FC;
+.itemSelectedStyle {
+    background-color: lightgreen;
     padding: 8;
 }
 #title-view-item{

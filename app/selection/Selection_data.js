@@ -1,5 +1,6 @@
 var Observable= require("data/observable").Observable;
-var L
+var frameModule= require("ui/frame");
+var topmost= frameModule.topmost();
 
 class BlogPostItemData {
 	constructor(title, content, summary, fav, id){
@@ -8,7 +9,6 @@ class BlogPostItemData {
 		this.Summary = summary;
 		this.IsFavourite = fav;
 		this.ID = id;
-		this.reorderActive = false;
 		this.isSelected = false;
 		this.isDeleted = false;
 	}
@@ -30,22 +30,131 @@ module.exports = function() {
     var observable = new Observable();
     observable.posts = allposts; 
 	
+	observable.selectedItemsCount = 0;
 	observable.isReorderActive = false;
-	observable.reorderActive = false;
-	observable.onActivateReorderTap = function(args){
-		observable.set("isReorderActive", true);	
-		for(var i in observable.posts){
-			observable.posts[i].reorderActive = true;
+	observable.isSelectionActive = false;
+	observable.goBack = function(args){
+		var page = args.object.page;
+		var pagebindingContext =page.bindingContext;
+		if(observable.isSelectionActive){
+			observable.set("isSelectionActive", false);
+			observable.set("selectedItemsCount", 0);
+			for(var i in pagebindingContext.posts){
+				if(pagebindingContext.posts[i].isSelected){
+					var wrapped_layout = page.getViewById(pagebindingContext.posts[i].ID);
+					var wrapped_layout_img = page.getViewById('img-'+pagebindingContext.posts[i].ID);
+					pagebindingContext.posts[i].isSelected = false;
+					wrapped_layout.class='itemStyle';
+				}
+			}
 		}
-		observable.set("posts", observable.posts);
+		else if(observable.isReorderActive){
+			observable.set("isReorderActive", false);
+			observable.set("isSelectionActive", false);
+			for(var i in pagebindingContext.posts){
+				var handle = page.getViewById('odr-'+pagebindingContext.posts[i].ID);
+				if(handle !=undefined){
+					handle.visibility = 'collapsed';
+				}
+			}
+		}
+		else {
+			topmost.navigate("main-page");
+		}	
 	}
-/*	
-	observable.on(Observable.propertyChangeEvent, function(args) {
-		if(args.propertyName == "isReorderActive"){
-			observable.set("posts", observable.posts);
+	observable.onActivateReorderTap = function(args){
+		observable.set("isReorderActive", true);
+        var page = args.object.page;
+        var pagebindingContext =page.bindingContext;
+		for(var i in pagebindingContext.posts){
+			var handle = page.getViewById('odr-'+pagebindingContext.posts[i].ID);
+			if(handle !=undefined){
+				handle.visibility = 'visible';
+			}
 		}
-	});
-*/
+			
+	}
+	observable.onItemReordered = function(args){
+		console.log("hello");
+	}
+	observable.onItemHold = function(args){
+		if(observable.isReorderActive ==false){
+			observable.isSelectionActive = true;
+			observable.set("isSelectionActive", true);
+			observable.set("selectedItemsCount", observable.selectedItemsCount+1);
+
+			observable.posts[args.itemIndex].isSelected = !observable.posts[args.itemIndex].isSelected;
+
+			var page = args.object.page;
+			var wrapped_layout = page.getViewById(observable.posts[args.itemIndex].ID);
+			wrapped_layout.class='itemSelectedStyle';
+		}
+	}
+	observable.onItemTap = function(args){
+		if(observable.isReorderActive ==false){
+			var page = args.object.page;
+			var pageBindingContext =page.bindingContext;
+			if(pageBindingContext.isSelectionActive== false){
+				var navigationEntry = {
+					moduleName: "selection/Detail_Page",
+					context: pageBindingContext.posts[args.itemIndex],
+				};
+				topmost.navigate(navigationEntry);
+			}
+			else {
+				var wrapped_layout = page.getViewById(observable.posts[args.itemIndex].ID);
+				var itemSelected = observable.posts[args.itemIndex].isSelected;
+				if(itemSelected){	
+					observable.set("selectedItemsCount", observable.selectedItemsCount-1);
+					wrapped_layout.class='itemStyle';
+				}
+				else{
+					observable.set("selectedItemsCount", observable.selectedItemsCount+1);
+					wrapped_layout.class='itemSelectedStyle';
+
+				}
+				observable.posts[args.itemIndex].isSelected = !observable.posts[args.itemIndex].isSelected;
+			}
+		}
+	}
+	observable.onToggleSelectedFavoriteTap = function(args){
+		observable.set("isSelectionActive", false);
+		var page = args.object.page;
+		var pagebindingContext = page.bindingContext;
+		for(var i in pagebindingContext.posts){
+			if(pagebindingContext.posts[i].isSelected){
+				observable.set("selectedItemsCount", observable.selectedItemsCount-1);
+				pagebindingContext.posts[i].IsFavourite = !pagebindingContext.posts[i].IsFavourite;
+				var wrapped_layout = page.getViewById(pagebindingContext.posts[i].ID);
+				var wrapped_layout_img = page.getViewById('img-'+pagebindingContext.posts[i].ID);
+				if(pagebindingContext.posts[i].IsFavourite){
+					wrapped_layout_img.opacity = 1;
+				}
+				else {
+					wrapped_layout_img.opacity = 0;
+				}
+				pagebindingContext.posts[i].isSelected = false;
+				wrapped_layout.class='itemStyle';
+				
+			}
+		}
+		observable.set("posts", pagebindingContext.posts);
+
+	}
+	observable.onDeleteSelectedTap = function(args){
+		observable.set("isSelectionActive", false);
+		var page = args.object.page;
+		var pagebindingContext = page.bindingContext;
+		for(var i in pagebindingContext.posts){
+			if(pagebindingContext.posts[i].isSelected){
+				observable.set("selectedItemsCount", observable.selectedItemsCount-1);
+				pagebindingContext.posts[i].isDeleted = true;
+				var wrapped_layout = page.getViewById(pagebindingContext.posts[i].ID);
+				wrapped_layout.visibility="collapsed";
+			}
+		}
+		observable.set("posts", pagebindingContext.posts);
+	}
 	function _show_list(){
 		var all_favorite = observable.all_favorite;
 		ret = [];
@@ -62,11 +171,11 @@ module.exports = function() {
 		
 		return ret;
 	}
-	var gestures = require("ui/gestures");
 	observable.on(Observable.propertyChangeEvent, function(args) {
 		if(args.propertyName =="all_favorite"){
 			observable.set("posts", _show_list());
 		}
+	
 	});
 
     return observable;
