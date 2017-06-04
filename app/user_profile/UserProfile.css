@@ -1,5 +1,5 @@
 #page{
-    background-color: gray;
+    background-color: #667394;
 }
 
 #user-image {
@@ -11,9 +11,15 @@
     vertical-align: top;
     align-self: center;
 }
-
+#border {
+	background-color: #899BFE;
+    width : 80%;
+    height: 80%;
+    margin-bottom: 20;
+	z-index: -1;
+}
 #user-main {
-    background-color: white;
+    background-color: #30BCFF;
     horizontal-align: center;
     width : 80%;
     height: 80%;
@@ -22,16 +28,16 @@
     z-index: -1;
 }
 #info-section {
+	background-color: white;
     padding : 30 10 10 10;
 }
 #switch {
     horizontal-align: right;
 }
 #button {
-    horizontal-align: stretch;
-    text-align: center;
     color: white;
-    background-color: #30BCFF;
     font-size: 16;
     text-transform: uppercase;
+	text-align : center;
+	vertical-align : center;
 }

@@ -1,6 +1,6 @@
 <Page loaded="pageLoaded"
       xmlns:lv="nativescript-telerik-ui/listview">
-    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#151F2F" color="white">
         <android>
             <NavigationButton icon="res://ic_back" tap="goBack" />
         </android>

@@ -1,0 +1,27 @@
+<Page loaded="pageLoaded"
+  	xmlns:drawer="nativescript-telerik-ui/sidedrawer">
+  	<ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#151F2F" color="white">
+		<android>
+			<NavigationButton icon="res://ic_back" tap="goBack" />
+		</android>
+	</ActionBar>
+	<StackLayout orientation="vertical" style="padding-top : 50;">
+		<Label class="title" text="IUI x Nativescript"/> 
+		<Label/>
+		<Label/>
+		<Label class="about_text" text="This project analyzes the UI performances" /> 
+		<Label class="about_text" text="and available functions  of Android, React Native,"/> 
+		<Label class="about_text" text="and NativeScript through comparison of quantitative"/>
+		<Label class="about_text" text="UI testing measures."/>
+
+		<Label/>
+		<Label/>
+		<Label/>
+
+		<Label class="profile_subject" text="CS409, SOC of KAIST"/>
+		<Label class="profile_text" text="Subin Jeong"/>
+		<Label class="profile_text" text="Hyunsung Cho"/>
+		<Label class="profile_text" text="Youngsoo Jang"/>
+		<Label class="profile_period" text="Spring 2017"/>
+	</StackLayout>
+</Page>

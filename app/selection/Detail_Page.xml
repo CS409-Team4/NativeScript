@@ -1,5 +1,5 @@
 <Page navigatingTo="onNavigatingTo">
-	<ActionBar title="Selection" automationText="ActionBar" backgroundColor="#00c73c" color="white">
+	<ActionBar title="Selection" automationText="ActionBar" backgroundColor="#151F2F" color="white">
 		<NavigationButton icon="res://ic_back" tap="goBack" />
 		<android>
 		<ActionBar.actionItems>

@@ -1,6 +1,6 @@
 <Page loaded="pageLoaded"
   xmlns:drawer="nativescript-telerik-ui/sidedrawer">
-  <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+  <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#151F2F" color="white">
     <android>
         <NavigationButton icon="res://ic_menu_main" tap="openDrawer" />
     </android>
@@ -27,12 +27,12 @@
                      <Label text="Item layouts"/>
                  </StackLayout>
                  <StackLayout class="cardview" row="2" col="0" tap="clickcard">
-                     <Image src="res://screen_naver" />
-                     <Label text="Web Naver"/>
-                 </StackLayout>
-                 <StackLayout class="cardview" row="2" col="1" tap="clickcard">
                      <Image src="res://screen_listview_selection" />
                      <Label text="Selection"/>
+                 </StackLayout>
+                 <StackLayout class="cardview" row="2" col="1" tap="clickcard">
+                     <Image src="res://screen_naver" />
+                     <Label text="Web Naver"/>
                  </StackLayout>  
              </GridLayout>
          </ScrollView>
@@ -40,10 +40,9 @@
  </drawer:RadSideDrawer.mainContent>
  <drawer:RadSideDrawerr.drawerContent>
     <GridLayout class="drawer-content">
-        <StackLayout class="drawer-list">
-          <label text="Home"  />
-          <label text="About" />
-          <label text="Settings" />
+        <StackLayout class="drawer-list" verticalAlignment="center" horizontalAlignment="center">
+          <label text="Home"  tap="homeTap" />
+          <label text="About" tap="aboutTap"/>
       </StackLayout>
     </GridLayout>
 </drawer:RadSideDrawerr.drawerContent>

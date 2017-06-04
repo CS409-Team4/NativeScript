@@ -4,7 +4,7 @@ var frameModule = require("ui/frame");
 exports.pageLoaded = function() {
 	var topmost= frameModule.topmost();
     console.log("Welcome Subin!!");
-    topmost.navigate("web_naver/WebNaver");
+    //topmost.navigate("web_naver/WebNaver");
 };
 
 
@@ -29,15 +29,27 @@ exports.clickcard = function (eventData) {
         topmost.navigate("itemlayout/ItemLayout");
     }
     else if(str == ":29:"){
-		console.log('naver');
-        topmost.navigate("web_naver/WebNaver");
-    }
-    else if(str == ":33:"){
         console.log("selection");
         topmost.navigate("selection/Selection");
     }
+    else if(str == ":33:"){
+		console.log('naver');
+        topmost.navigate("web_naver/WebNaver");
+    }
 }
 
+exports.homeTap = function(args){
+    var topmost= frameModule.topmost();
+    var drawer = topmost.getViewById('drawer');
+    drawer.closeDrawer();
+    var btn = args.object;
+    btn.actionBarHidden = true;
+			
+}
+exports.aboutTap = function(args){
+    var topmost= frameModule.topmost();
+	topmost.navigate("about");
+}
 
 exports.openDrawer = function(args){
     var topmost= frameModule.topmost();

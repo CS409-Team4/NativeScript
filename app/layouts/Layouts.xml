@@ -1,12 +1,12 @@
 <Page navigatingTo="preloaded">
-    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#00c73c" color="white">
+    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#151F2F" color="white">
         <android>
             <NavigationButton icon="res://ic_back" tap="goBack" />
         </android>
     </ActionBar>
     <TabView id="tabview" selectedIndexChanged="onSelectedIndexChanged"
-        tabBackgroundColor="lightgreen"
-        androidSelectedTabHighlightColor="#00c73c"
+        tabBackgroundColor="#30BCFF"
+        androidSelectedTabHighlightColor="#151F2F"
         selectedIndex="{{ selectedIndex }}" >
         <TabView.items>
             <TabViewItem iconSource="{{ selectedIndex == 0 ? 'res://stack1' : 'res://stack' }}" >

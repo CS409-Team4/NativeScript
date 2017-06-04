@@ -28,9 +28,6 @@ exports.onTap = function(args){
 	page.getViewById("2").class='btn';
 	page.getViewById("3").class='btn';
 	page.getViewById("4").class='btn';
-	page.getViewById("5").class='btn';
-	page.getViewById("6").class='btn';
-	page.getViewById("7").class='btn';
 	selected_btn.class='selected-btn';
 }
 var webviewModule = require("tns-core-modules/ui/web-view");

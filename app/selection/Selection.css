@@ -2,6 +2,10 @@
 	background-color : #30BCFF;
 	color: white;
 }
+#segmented-bar-reorder {
+	background-color : #9fdbfc;
+	color: white;
+}
 #contentStyle {
     font-family: "sans-serif";
     font-size: 14;
@@ -29,7 +33,7 @@
 }
 
 .itemSelectedStyle {
-    background-color: lightgreen;
+    background-color: #F3F5FC;
     padding: 8;
 }
 #title-view-item{
@@ -39,11 +43,11 @@
 	vertical-align: center;
 }
 #action-bar-selection {
-	background-color : #00c73c;
+	background-color : #151F2F;
 	color : white;
 }
 
 #action-bar-reorder {
-	background-color : lightgreen;
+	background-color : #30BCFF;
 	color : white;
 }

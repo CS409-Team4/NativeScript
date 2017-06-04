@@ -5,30 +5,29 @@
 
 .main{
     padding : 5px;
-	background-color: gray;
+	background-color: #455a64;
 }
 
 .cardview {
     background-color: white;
-    margin : 5px;
+    margin : 8;
 }
 
 .cardview Label {
     text-align: center;
-    margin-top: 12px;
+    margin-top: 13;
 }
 
 .drawer-content {
-	background-color: #00c73c;
+	background-color: #3f5ff8;
 }
 
 .drawer-list {
-	font-size: 18;
+	font-size: 15;
 	color : white;
-	padding : 50dp;
 }
 .drawer-list Label {
-	padding : 10dp;
+	padding : 10;
 }
 
 @import 'nativescript-theme-core/css/core.light.css';

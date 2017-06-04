@@ -1,6 +1,6 @@
 <Page loaded="pageLoaded"
 	xmlns:lv="nativescript-telerik-ui/listview">
-	<ActionBar title="IUI Nativescript" id="{{ isReorderActive ? 'action-bar-reorder' : 'action-bar-selection' }}">
+	<ActionBar title="IUI Nativescript" id="{{ (isReorderActive || isSelectionActive)  ? 'action-bar-reorder' : 'action-bar-selection' }}">
 		<android>
 		<NavigationButton icon="res://ic_back" tap="{{ goBack }}" />
 		<ActionBar.actionItems>
@@ -20,8 +20,9 @@
 	<StackLayout orientation="vertical">
 	<SegmentedBar row="0" 
 		selectedIndex="{{ all_favorite }}"
-		selectedBackgroundColor="#FAC950"
-		id="segmented-bar"
+		selectedBackgroundColor="#151F2F"
+		id="segmented-bar" 
+		opacity="{{ (isReorderActive || isSelectionActive) ? '0.4' : '1'}}"
 		selectedIndexChanged="selectedIndexChanged">
 		<SegmentedBar.items>
 			<SegmentedBarItem title="ALL"  />

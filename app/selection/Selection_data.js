@@ -148,6 +148,22 @@ module.exports = function() {
 		observable.set("posts", pagebindingContext.posts);
 
 	}
+	function _show_list(){
+		var all_favorite = observable.all_favorite;
+		ret = [];
+		for(var i in allposts){
+			if(allposts[i].isDeleted == false){
+				if(all_favorite == allposts[i].IsFavourite && all_favorite == 1){
+					ret.push(allposts[i]);
+				}
+				if(all_favorite == 0 || all_favorite == undefined) {
+					return allposts;
+				}
+			}
+		}
+		
+		return ret;
+	}
 
 	/*onDeleteSelectedTap function*/
 	observable.onDeleteSelectedTap = function(args){
@@ -162,23 +178,8 @@ module.exports = function() {
 				wrapped_layout.visibility="collapsed";
 			}
 		}
-		observable.set("posts", pagebindingContext.posts);
-	}
-	function _show_list(){
-		var all_favorite = observable.all_favorite;
-		ret = [];
-		for(var i in observable.posts){
-			if(allposts[i].isDeleted == false){
-				if(all_favorite == observable.posts[i].IsFavourite && all_favorite == 1){
-					ret.push(allposts[i]);
-				}
-				if(all_favorite == 0 || all_favorite == undefined) {
-					return allposts;
-				}
-			}
-		}
-		
-		return ret;
+		//observable.set("posts", pagebindingContext.posts);
+		observable.set("posts", _show_list());
 	}
 	observable.on(Observable.propertyChangeEvent, function(args) {
 		if(args.propertyName =="all_favorite"){
