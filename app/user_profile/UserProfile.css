@@ -4,32 +4,34 @@
 
 #user-image {
     border-radius: 50;
-    width: 70dp;
-    height: 70dp;
-    margin-top: 20dp;
+    width: 80;
+    height: 80;
+    margin-top: 20;
     horizontal-align: center;
     vertical-align: top;
     align-self: center;
 }
 #border {
 	background-color: #899BFE;
+	margin-top:-40;
+	height:2;
     width : 80%;
-    height: 80%;
-    margin-bottom: 20;
-	z-index: -1;
+	z-index: -0.5;
+}
+#switch_text {
+	font-size: 16;
 }
 #user-main {
     background-color: #30BCFF;
     horizontal-align: center;
     width : 80%;
-    height: 80%;
-    margin-top: -30;
+    margin-top: -20;
     margin-bottom: 30;
     z-index: -1;
 }
 #info-section {
 	background-color: white;
-    padding : 30 10 10 10;
+    padding : 40 10 10 10;
 }
 #switch {
     horizontal-align: right;
@@ -40,4 +42,19 @@
     text-transform: uppercase;
 	text-align : center;
 	vertical-align : center;
+}
+Label {
+	font-size :12;
+	padding : 5;
+}
+#bio_text {	
+	font-size :14;
+}
+TextField {
+	font-size :14;
+	padding : 5;
+}
+TextView{
+	font-size :14;
+	padding: 5 5 10 5;
 }

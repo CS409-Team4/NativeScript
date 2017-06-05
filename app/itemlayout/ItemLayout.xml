@@ -14,11 +14,13 @@
             <lv:ListViewLinearLayout itemHeight="210"/>
         </lv:RadListView.listViewLayout>
         <lv:RadListView.itemTemplate>
-                <StackLayout orientation="vertical">
-                    <Image src="{{ imgName }}"  height="200" stretch="aspectFill" />
-                    <Label text="{{ title }}" cssClass="recipeTitle"/>
-                    <Label text="{{ 'by ' + author }}" cssClass="recipeAuthor"/>
-                </StackLayout>
+			<StackLayout orientation="vertical">
+				<Image src="{{ imgName }}"  height="200" stretch="aspectFill"/>
+				<StackLayout orientation="vertical" id="text_wrapped" >
+					<Label text="{{ title }}" class="recipeTitle"/>
+					<Label text="{{ 'by ' + author }}" class="recipeAuthor"/>
+				</StackLayout>
+			</StackLayout>
         </lv:RadListView.itemTemplate>
     </lv:RadListView>
 </Page>

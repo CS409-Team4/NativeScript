@@ -1,11 +1,11 @@
 <Page loaded="pageLoaded"
     xmlns:CheckBox="nativescript-checkbox">
-    <ActionBar title="IUI Nativescript" class="action-bar" backgroundColor="#151F2F" color="white">
+    <ActionBar title="User profile" class="action-bar" backgroundColor="#151F2F" color="white">
     <android>
         <NavigationButton icon="res://ic_back" tap="goBack" />
     </android>
     </ActionBar>
-	<GridLayout rows="70,2,*" id="page" >
+	<GridLayout rows="80,2,*" id="page" >
 		<Image id="user-image" src="~/images/user.png" tap="imgclick" row="0"/>
 		<GridLayout id="border" row="1"> </GridLayout>
 		<GridLayout rows="*, 50" id="user-main" row="2">
@@ -18,9 +18,9 @@
 				<TextField id="password" text="Password" secure="true" />
 				<CheckBox:CheckBox checked="false" text="Show password" id="checkbox" tap="checkboxclick"/>
 				<Label text="Bio"/>
-				<TextView hint="Add bio"/>
+				<TextView id="bio_text" hint="Add bio"/>
 				<GridLayout rows="auto, *">
-					<Label text="Public profile"></Label>
+					<Label id="switch_text" text="Public profile"></Label>
 					<Switch id="switch" horizontalAlignment="right" checked="false" />
 				</GridLayout>
 			</StackLayout>

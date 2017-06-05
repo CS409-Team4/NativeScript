@@ -25,7 +25,7 @@
         <GridLayout row="1" rows="auto, *">
             <ListView row="1" items="{{ sessions }}" id="sessions-list" separatorColor="#00000000">
                 <ListView.itemTemplate>
-                    <GridLayout columns="auto, auto, *" rows="auto, auto" tap="toggleFavourite" backgroundColor="{{ isFavourite ? '#19FFFFFF' : '#00000000' }}">
+                    <GridLayout columns="auto, auto, *" id="item" rows="auto, auto" tap="toggleFavourite" backgroundColor="{{ isFavourite ? '#19FFFFFF' : '#00000000' }}">
                         <Image id="imgID" row="0" rowSpan="2" col="0" src="{{ isFavourite ? 'res://add_to_fav_1' : 'res://add_to_fav' }}" />
                         <Label row="0" col="1" text="{{ start + ' ~ '+  end }}" class="session-time"/>
                         <Label row="0" col="2" text="{{ room }}" class="session-room"/>

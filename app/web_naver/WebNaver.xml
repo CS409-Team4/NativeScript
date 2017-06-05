@@ -17,14 +17,38 @@
 				<TextField  id="searchtext"/>
 			</StackLayout>
 		</StackLayout>
-		<GridLayout columns="*,*,*,*,*" height="50" id="scrolltab">
-			<button text="뉴스" class="selected-btn" tap="onTap" id="0" col="0"/>
-			<button text="연예" class="btn" tap="onTap" id="1" col="1"/>
-			<button text="스포츠" class="btn" tap="onTap" id="2" col="2"/>
-			<button text="쇼핑" class="btn" tap="onTap" id="3" col="3"/>
-			<button text="푸드" class="btn" tap="onTap" id="4" col="4"/>
-		</GridLayout>
-		<WebView src="http://m.naver.com" id="webview"/>
+    <TabView 
+        tabBackgroundColor="white"
+        androidSelectedTabHighlightColor="#00c73c">
+        <TabView.items>
+            <TabViewItem title="뉴스" >
+                <TabViewItem.view>
+					<WebView src="http://m.naver.com" id="webview"/>
+                </TabViewItem.view>
+			</TabViewItem>
+            <TabViewItem title="연예" >
+                <TabViewItem.view>
+					<WebView src="http://m.naver.com" id="webview"/>
+                </TabViewItem.view>
+			</TabViewItem>
+            <TabViewItem title="스포츠" >
+                <TabViewItem.view>
+					<WebView src="http://m.naver.com" id="webview"/>
+                </TabViewItem.view>
+			</TabViewItem>
+            <TabViewItem title="웹툰" >
+                <TabViewItem.view>
+					<WebView src="http://m.naver.com" id="webview"/>
+                </TabViewItem.view>
+			</TabViewItem>
+            <TabViewItem title="푸드" >
+                <TabViewItem.view>
+					<WebView src="http://m.naver.com" id="webview"/>
+                </TabViewItem.view>
+			</TabViewItem>
+		</TabView.items>
+	</TabView>
+
 	</StackLayout>
 	</drawer:RadSideDrawer.mainContent>
 	<drawer:RadSideDrawerr.drawerContent>

@@ -1,16 +1,10 @@
 #container {
-    background-color:gray;
-}
-
-#searchcontainer{
-    background-color:lightgray;
+    background-color: #667394;
 }
 
 SegmentedBar {
-    background-color: lightgreen;
+    background-color: #4ac1fa;
     color: white;
-    borderBottomColor: #fed03c;
-
 }
 SearchBar {
     background-color: white;
@@ -39,5 +33,9 @@ SearchBar {
     /*font-weight: 300;*/
     font-size: 20;
     color: #c3c3c3;
+	margin-top : -10;
     margin-bottom: 16;
+}
+#imgID {
+	margin:15 20 15 15;
 }

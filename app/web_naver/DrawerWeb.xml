@@ -1,9 +1,9 @@
 <Page loaded="pageLoaded"  actionBarHidden="true">
 	<StackLayout orientation="vertical">
-		<AbsoluteLayout >
-			<WebView id="webview" src="" width="410"/>
-			<Image src="res://float_button" left="10" top="580" style="width: 50; margin:10;" tap="goBackWeb"/>
-		</AbsoluteLayout>
+		<GridLayout rows="*,5">
+			<WebView id="webview" src="" row='0'/>
+			<Image src="res://float_button" left="10" top="580" tap="goBackWeb" horizontalAlignment="left" row="1"/>
+		</GridLayout>
     </StackLayout>
 </Page>
 

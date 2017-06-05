@@ -37,6 +37,7 @@
 		itemDeselected="onItemDeselected"
 		itemTap="{{ onItemTap }}"
 		itemHold="{{ onItemHold }}"
+		reorderMode="Drag"
  		items="{{ posts }}" >
 	<lv:RadListView.listViewLayout>
 		<lv:ListViewLinearLayout scrollDirection="Vertical"/>
