@@ -272,23 +272,31 @@ def naver_web_test():
 		device.touch(360, 1200 -i*30, MonkeyDevice.MOVE)
 		time.sleep(0.01)
 	device.touch(360, 300, MonkeyDevice.UP)
-	time.sleep(1.0)
+	time.sleep(2.0)
 	### Drag END ###
-	### Press selection page ###
+	### Press Naver page ###
 	device.touch(540, 1040, MonkeyDevice.DOWN_AND_UP) 
-	time.sleep(1)
-	### click navi button ###
-	device.touch(50, 120, MonkeyDevice.DOWN_AND_UP) 
-	time.sleep(2)
+	time.sleep(5)
+	device.touch(40, 800, MonkeyDevice.DOWN)
+	### Drag navi drawer ###
+	for i in range(30):
+		device.touch(40+i*20, 800, MonkeyDevice.MOVE)
+		time.sleep(0.02)
+	device.touch(640, 800, MonkeyDevice.UP)
+	time.sleep(3.5)
 	### click mail button ###
 	device.touch(100, 330, MonkeyDevice.DOWN_AND_UP) 
-	time.sleep(2)
+	time.sleep(5)
 	### click floating back button ###
 	device.touch(85, 1185, MonkeyDevice.DOWN_AND_UP) 
-	time.sleep(2)
-	### click navi button ###
-	device.touch(50, 120, MonkeyDevice.DOWN_AND_UP) 
-	time.sleep(2)
+	time.sleep(3)
+	### Drag navi drawer ###
+	device.touch(40, 800, MonkeyDevice.DOWN)
+	for i in range(30):
+		device.touch(40+i*20, 800, MonkeyDevice.MOVE)
+		time.sleep(0.02)
+	device.touch(640, 800, MonkeyDevice.UP)
+	time.sleep(3.5)
 	### click blog button ###
 	device.touch(450, 330, MonkeyDevice.DOWN_AND_UP) 
 	time.sleep(2)
@@ -302,4 +310,6 @@ def naver_web_test():
 #conference_agenda_test()
 #item_layout_drag_click()
 #selection_test()
+naver_web_test()
+
 print "Test Done"
