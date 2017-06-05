@@ -1,6 +1,7 @@
-#segmented-bar {
+Button {
 	background-color : #30BCFF;
 	color: white;
+	margin:-7 -3 -7 -5;
 }
 #segmented-bar-reorder {
 	background-color : #9fdbfc;

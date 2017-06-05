@@ -123,6 +123,13 @@ module.exports = function() {
 		}
 	}
 
+	observable.onAllTap = function(args){
+		observable.set('all_favorite', 0);
+	}
+
+	observable.onFavTap = function(args){
+		observable.set('all_favorite', 1);
+	}
 	/*onToggleSelectedFavoriteTap function*/
 	observable.onToggleSelectedFavoriteTap = function(args){
 		observable.set("isSelectionActive", false);

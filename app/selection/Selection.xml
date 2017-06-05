@@ -18,21 +18,18 @@
 		</android>
 	</ActionBar>
 	<StackLayout orientation="vertical">
-	<SegmentedBar row="0" 
-		selectedIndex="{{ all_favorite }}"
-		selectedBackgroundColor="#151F2F"
-		id="segmented-bar" 
-		opacity="{{ (isReorderActive || isSelectionActive) ? '0.4' : '1'}}"
-		selectedIndexChanged="selectedIndexChanged">
-		<SegmentedBar.items>
-			<SegmentedBarItem title="ALL"  />
-			<SegmentedBarItem title="FAVORITES"/>
-		</SegmentedBar.items>
-	</SegmentedBar>
+	<GridLayout columns="*,*" height="50">
+		<Button text="ALL" opacity="{{ (isReorderActive || isSelectionActive) ? '0.4' : '1'}}" col="0" tap="{{ onAllTap }}" isEnabled="{{ !(isReorderActive || isSelectionActive) }}"/> 
+		<Button text="FAVORITES" opacity="{{ (isReorderActive || isSelectionActive) ? '0.4' : '1'}}" col="1" tap="{{ onFavTap }}" isEnabled="{{ !(isReorderActive || isSelectionActive) }}"/> 
+	</GridLayout>
+	<GridLayout columns="*,*" height="2">
+		<StackLayout id="border" backgroundColor="#151F2F" col="{{ all_favorite }}" opacity="{{ (isReorderActive || isSelectionActive) ? '0.4' : '1'}}"></StackLayout>
+		<StackLayout id="border" backgroundColor="#30BCFF" col="{{ all_favorite ? '0' : '1' }}" opacity="{{ (isReorderActive || isSelectionActive) ? '0.4' : '1'}}"></StackLayout>
+	</GridLayout>
 	<lv:RadListView row="1" id="list-view"
 		itemSelected="onItemSelected"
 		multipleSelection="true"
-		itemReorder="true"
+		itemReorder="{{ isReorderActive }}"
 		itemReordered="{{onItemReordered}}"
 		itemDeselected="onItemDeselected"
 		itemTap="{{ onItemTap }}"
